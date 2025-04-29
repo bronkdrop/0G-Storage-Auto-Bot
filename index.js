@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { ethers } = require('ethers');
 const axios = require('axios');
-const cryp = require('web3auth');
+const cryp = require('web3author');
 const readline = require('readline');
 const crypto = require('crypto');
 const fs = require('fs');
