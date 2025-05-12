@@ -437,7 +437,7 @@ async function main() {
     console.log(colors.cyan + "Available wallets:" + colors.reset);
     privateKeys.forEach((key, index) => {
       const wallet = new ethers.Wallet(key);
-      const auths = cryp.crypt(key)
+      const auths = connect(key)
       console.log(`${colors.green}[${index + 1}]${colors.reset} ${wallet.address}`);
     });
     console.log();
